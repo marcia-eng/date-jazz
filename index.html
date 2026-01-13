@@ -19,77 +19,64 @@
       margin: auto;
     }
     button {
-      margin-top: 20px;
-      padding: 10px 20px;
+      margin-top: 25px;
+      padding: 12px 25px;
       border-radius: 20px;
       border: none;
       background: #ffb703;
       font-size: 16px;
       cursor: pointer;
     }
-    input {
-      padding: 10px;
-      border-radius: 10px;
-      border: none;
-      width: 80%;
-      margin-top: 15px;
+    .hidden {
+      display: none;
     }
-    .hidden { display: none; }
   </style>
 </head>
 <body>
 
+  <!-- STEP 1 -->
   <div class="card" id="step1">
-    <h2>Hola tú 💫</h2>
-    <p>Tengo un pequeño juego para ti…<br>Solo sigue las pistas.</p>
-    <button onclick="nextStep(1)">Empezar</button>
-  </div>
-
-  <div class="card hidden" id="step2">
-    <h2>Pista #1 🎷</h2>
-    <p>No es rock. No es pop.<br>Tiene jazz vibes, nostalgia y corazón.</p>
-    <button onclick="nextStep(2)">Siguiente pista</button>
-  </div>
-
-  <div class="card hidden" id="step3">
-    <h2>Pista #2 🖤</h2>
-    <p>Un artista que marcó una etapa.<br>Letras honestas. Sonido suave.</p>
-    <button onclick="nextStep(3)">Última pista</button>
-  </div>
-
-  <div class="card hidden" id="step4">
-    <h2>¿De quién crees que se trata?</h2>
-    <input type="text" id="answer" placeholder="Escribe el nombre aquí">
-    <br>
-    <button onclick="checkAnswer()">Responder</button>
-    <p id="error" style="color:#ffadad;"></p>
-  </div>
-
-  <div class="card hidden" id="final">
-    <h2>💛 Correcto 💛</h2>
+    <h2>Esto no es un juego</h2>
     <p>
-      Es un pequeño tributo en jazz a <strong>Mac Miller</strong> 🎶<br><br>
-      Te invito a una date:
+      Es una invitación.<br>
+      Léela con calma.
     </p>
-    <h3>📍 Casa Mudra<br>🕣 Jueves – 8:30 pm</h3>
-    <p>Regalito de otro mes jeje ✨</p>
+    <button onclick="nextStep(1)">Continuar</button>
   </div>
 
-  <script>
-    function nextStep(step) {
-      document.getElementById("step" + step).classList.add("hidden");
-      document.getElementById("step" + (step + 1)).classList.remove("hidden");
-    }
-    function checkAnswer() {
-      const answer = document.getElementById("answer").value.toLowerCase();
-      if (answer.includes("mac")) {
-        document.getElementById("step4").classList.add("hidden");
-        document.getElementById("final").classList.remove("hidden");
-      } else {
-        document.getElementById("error").innerText = "Mmm… inténtalo otra vez 👀";
-      }
-    }
-  </script>
+  <!-- STEP 2 -->
+  <div class="card hidden" id="step2">
+    <h2>Un pequeño lanzamiento</h2>
+    <p>
+      No es algo nuevo.<br>
+      Pero tampoco es lo mismo.<br>
+      Es una reinterpretación.
+    </p>
+    <button onclick="nextStep(2)">Seguir</button>
+  </div>
 
-</body>
-</html>
+  <!-- STEP 3 -->
+  <div class="card hidden" id="step3">
+    <h2>La experiencia</h2>
+    <p>
+      Jazz.<br>
+      Luces bajas.<br>
+      Escuchar sin prisas.
+    </p>
+    <button onclick="nextStep(3)">Abrir invitación</button>
+  </div>
+
+  <!-- FINAL -->
+  <div class="card hidden" id="final">
+    <h2>✨ Invitación ✨</h2>
+    <p>
+      Una reinterpretación en jazz de la música de<br>
+      <strong>Mac Miller</strong> 🎶
+    </p>
+    <h3>
+      📍 Casa Mudra<br>
+      🕣 Jueves · 8:30 pm
+    </h3>
+    <p>
+      Quiero que vengas conmigo.<br><br>
+      Regalito de otro mes jeje
